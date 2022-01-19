@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="T2012E_UWP.Demo.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:T2012E_UWP.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:local1="using:T2012E_UWP.Entity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="TestPage2">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+        
+        <DataTemplate x:Key="AccountListViewTemplate" x:DataType="local1:Account">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="{x:Bind avatar}" Width="100" Margin="5"/>
+                <TextBlock Text="{x:Bind firstName}" x:Phase="1" Margin="0,5,0,5"/>
+                <TextBlock Text="{x:Bind password}" x:Phase="1" Margin="0,5,0,5"/>
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="AccountListViewTemplate2" x:DataType="local1:Account">
+            <Grid Margin="0,12,0,12" AutomationProperties.Name="{x:Bind lastName}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" MinWidth="150"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="{x:Bind avatar}" MaxHeight="100" Stretch="Fill"/>
+
+                <StackPanel Margin="12,0,0,0" Grid.Column="1" >
+                    <TextBlock Text="{x:Bind lastName}" FontSize="14" FontWeight="SemiBold" Style="{ThemeResource BaseTextBlockStyle}"
+                        HorizontalAlignment="Left" Margin="0,0,0,6" LineHeight="20"/>
+                    <TextBlock Text="{x:Bind password}" FontFamily="Segoe UI" FontWeight="Normal" Style="{ThemeResource BodyTextBlockStyle}"
+                        TextTrimming="CharacterEllipsis" Width="350" MaxLines="1"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{x:Bind lastName}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="0,0,0,0"/>
+                        <TextBlock Text=" Views " HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                        <TextBlock Text=" ⋅ " FontFamily="Segoe UI" FontSize="12" FontWeight="Bold"
+                            HorizontalAlignment="Left"/>
+                        <TextBlock Text="{x:Bind lastName}" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}" Margin="5,0,0,0"/>
+                        <TextBlock Text=" Likes" HorizontalAlignment="Left" Style="{ThemeResource CaptionTextBlockStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Text="Page 2" FontSize="24" Style="{StaticResource TestPage2}"></TextBlock>
+        </Grid>
+
+        <StackPanel Grid.Row="1">
+            <ListView x:Name="MyListView" ItemTemplate="{StaticResource AccountListViewTemplate2}"></ListView>
+        </StackPanel>
+    </Grid>
+</Page>

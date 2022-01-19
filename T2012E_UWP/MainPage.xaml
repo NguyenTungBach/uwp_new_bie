@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="T2012E_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:T2012E_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:Name="nvSample" IsBackButtonVisible="Collapsed" PaneDisplayMode="LeftCompact">
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Play" Content="Test Page 1" Tag="TestPage1" Tapped="Link_Tapped" />
+                <NavigationViewItem Icon="Save" Content="Test Page 2" Tag="TestPage2" Tapped="Link_Tapped" />
+                <NavigationViewItem Icon="Refresh" Content="Test Page 3" Tag="TestPage3" Tapped="Link_Tapped"/>
+                <!--<NavigationViewItem Icon="Download" Content="Menu Item4" Tag="SamplePage4" />-->
+            </NavigationView.MenuItems>
+            <Frame x:Name="contentFrame"/>
+        </NavigationView>
+    </Grid>
+</Page>

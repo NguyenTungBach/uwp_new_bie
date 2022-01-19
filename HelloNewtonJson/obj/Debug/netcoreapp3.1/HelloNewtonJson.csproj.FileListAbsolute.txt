@@ -1,0 +1,16 @@
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\bin\Debug\netcoreapp3.1\HelloNewtonJson.exe
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\bin\Debug\netcoreapp3.1\HelloNewtonJson.deps.json
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\bin\Debug\netcoreapp3.1\HelloNewtonJson.runtimeconfig.json
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\bin\Debug\netcoreapp3.1\HelloNewtonJson.runtimeconfig.dev.json
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\bin\Debug\netcoreapp3.1\HelloNewtonJson.dll
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\bin\Debug\netcoreapp3.1\HelloNewtonJson.pdb
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.csproj.AssemblyReference.cache
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.GeneratedMSBuildEditorConfig.editorconfig
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.AssemblyInfoInputs.cache
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.AssemblyInfo.cs
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.csproj.CoreCompileInputs.cache
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.csproj.CopyComplete
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.dll
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.pdb
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\HelloNewtonJson\obj\Debug\netcoreapp3.1\HelloNewtonJson.genruntimeconfig.cache

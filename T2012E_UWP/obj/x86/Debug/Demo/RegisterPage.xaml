@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="T2012E_UWP.Demo.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:T2012E_UWP.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBox x:ConnectionId='2' x:Name="firstName" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+         ScrollViewer.VerticalScrollBarVisibility="Auto"
+         HorizontalAlignment="Left" Margin="170,66,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="150"/>
+        <TextBox x:ConnectionId='3' x:Name="lastName" HorizontalAlignment="Left" Margin="366,66,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="150"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170,39,0,0" Text="Firstname" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="368,37,0,0" Text="Lastname" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='4' x:Name="email" HorizontalAlignment="Left" Margin="170,145,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="348"/>
+        <TextBlock HorizontalAlignment="Left" Margin="171,123,0,0" Text="Email" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170,175,0,0" Text="Password" VerticalAlignment="Top"/>
+        <PasswordBox x:ConnectionId='5' x:Name="password" HorizontalAlignment="Left" Margin="170,200,0,0" VerticalAlignment="Top" Width="348"/>
+        <TextBox x:ConnectionId='6' x:Name="address" HorizontalAlignment="Left" Margin="170,260,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="348"/>
+        <TextBlock HorizontalAlignment="Left" Margin="170,235,0,0" Text="Address" VerticalAlignment="Top"/>
+        <TextBox x:ConnectionId='7' x:Name="avatar" HorizontalAlignment="Left" Margin="170,378,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="348"/>
+        <TextBox x:ConnectionId='8' x:Name="phone" HorizontalAlignment="Left" Margin="170,320,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.569" Width="348"/>
+        <TextBlock HorizontalAlignment="Left" Margin="172,297,0,0" Text="Phone" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="171,358,0,0" Text="Avatar" VerticalAlignment="Top"/>
+        <RadioButton x:ConnectionId='9' Content="Male" Margin="170,422,0,0" VerticalAlignment="Top" GroupName="gender" Width="73"                      />
+        <RadioButton x:ConnectionId='10' Content="Fermale" Margin="270,422,0,0" VerticalAlignment="Top" GroupName="gender"                      />
+        <RadioButton x:ConnectionId='11' Content="Other" Margin="370,422,0,0" VerticalAlignment="Top" GroupName="gender"                      />
+        <Button x:ConnectionId='12' Content="Register" Margin="272,610,0,0" Width="120"                      VerticalAlignment="Top"/>
+
+        <TextBox x:ConnectionId='13' x:Name="introduction" HorizontalAlignment="Left" Margin="170,535,0,0" Text="" VerticalAlignment="Top" RenderTransformOrigin="0.515,0.615" Width="348" Header="Introduction"/>
+        <CalendarDatePicker x:ConnectionId='14' x:Name="birthday" DateFormat="{}{day.integer}-{month.integer}-{year.full}" Margin="171,469,0,0" Width="348" Header="Birthday" VerticalAlignment="Top"                                   />
+        <TextBlock x:ConnectionId='15' x:Name="checkFirstName" Visibility="Collapsed" HorizontalAlignment="Left" Height="25" Margin="172,101,0,0" Text="Hãy nhập tên đầu" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red"/>
+        <TextBlock x:ConnectionId='16' x:Name="checkLastName" Visibility="Collapsed"  HorizontalAlignment="Left" Height="20" Margin="370,100,0,0" Text="Hãy nhập tên cuối" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red"/>
+        <TextBlock x:ConnectionId='17' x:Name="checkEmail" Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="547,151,0,0" Text="Hãy nhập email" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red" />
+        <TextBlock x:ConnectionId='18' x:Name="checkPassword" Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="547,206,0,0" Text="Hãy nhập mật khẩu" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red" />
+        <TextBlock x:ConnectionId='19' x:Name="checkAddress" Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="547,266,0,0" Text="Hãy nhập địa chỉ" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red" />
+        <TextBlock x:ConnectionId='20' x:Name="checkPhone" Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="547,326,0,0" Text="Hãy nhập số điện thoại" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red"/>
+        <TextBlock x:ConnectionId='21' x:Name="checkAvatar" Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="547,385,0,0" Text="Hãy nhập link ảnh" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red"/>
+        <TextBlock x:ConnectionId='22' x:Name="checkGender"  Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="547,429,0,0" Text="Hãy chọn giới tính" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red"/>
+        <TextBlock x:ConnectionId='23' x:Name="checkBirthday" Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="547,497,0,0" Text="Hãy chọn năm sinh" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Foreground="Red"/>
+        <TextBlock x:ConnectionId='24' x:Name="checkIntroduction" Visibility="Collapsed"  HorizontalAlignment="Left" Height="24" Margin="547,563,0,0" Text="Hãy viết 1 vài lời về mình" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Foreground="Red"/>
+        <TextBlock x:ConnectionId='25' x:Name="waitingRespone" Visibility="Collapsed" HorizontalAlignment="Left" Height="24" Margin="270,648,0,0" Text="Xin chờ phản hồi..." TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Foreground="Red"/>
+    </Grid>
+</Page>
+
