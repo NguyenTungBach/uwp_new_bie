@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using T2012E_UWP.Entity;
 using T2012E_UWP.Service;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -25,10 +26,12 @@ namespace T2012E_UWP.Demo
     {
         private AccountService accountService = new AccountService();
         private int checkValid = 0;
+        
         public Login()
         {
             this.InitializeComponent();
         }
+
 
         private void checkValidate(string Email, string Password)
         {
@@ -54,7 +57,8 @@ namespace T2012E_UWP.Demo
 
         private void Register_Click(object sender, RoutedEventArgs e)
         {
-            NavigationViewDemo.NavigationFrame.Navigate(typeof(Demo.RegisterPage));
+            Frame.Navigate(typeof(Demo.RegisterPage));
+            //NavigationViewDemo.NavigationFrame.Navigate(typeof(Demo.RegisterPage));
         }
 
         private async void Login_Click(object sender, RoutedEventArgs e)
@@ -65,14 +69,17 @@ namespace T2012E_UWP.Demo
                 return;
             }
             waitingRespone.Visibility = Visibility.Visible;
-            var result = await accountService.LoginAsync(email.Text, password.Password.ToString());
+
+            //Account account = await accountService.GetLoggedAccount();
+            Credential result = await accountService.LoginAsync(email.Text, password.Password.ToString());
 
             ContentDialog contentDialog = new ContentDialog();
             waitingRespone.Visibility = Visibility.Collapsed;
-            if (result !=null)
+            if (result != null)
             {
                 contentDialog.Title = "Login success, this is your access_token!";
                 contentDialog.Content = result.access_token;
+                Frame.Navigate(typeof(Demo.NavigationViewDemo));
             }
             else
             {

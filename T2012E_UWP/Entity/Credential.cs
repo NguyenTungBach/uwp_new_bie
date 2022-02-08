@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace T2012E_UWP.Entity
 {
-    class Login
+    public class Credential
     {
         public string access_token { get; set; }
         public string refresh_token { get; set; }

@@ -9,6 +9,21 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="Setting Page" FontSize="24"></TextBlock>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <Button Content="Log Out" FontSize="24" Click="Button_LogOut"/>
+        </StackPanel>
     </Grid>
 </Page>

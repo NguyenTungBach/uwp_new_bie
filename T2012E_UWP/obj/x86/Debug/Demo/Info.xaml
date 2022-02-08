@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="T2012E_UWP.Demo.Info"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:T2012E_UWP.Demo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:entity="using:T2012E_UWP.Entity"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.Resources>
+        <DataTemplate x:Key="InfoUser"                            >
+            <Grid x:ConnectionId='3'>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackPanel HorizontalAlignment="Center" Grid.Row="0">
+                    <TextBlock Text="Thông tin" FontSize="20"  />
+                </StackPanel>
+                <StackPanel  Grid.Row="1" Margin="0 50 0 0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="60 0 60 0">
+                            <TextBlock Text="First Name" FontSize="20" Margin="0 0 0 10"/>
+                            <TextBlock Text="Last Name" FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock Text="Email" FontSize="20" Margin="0 0 0 10" />
+                            <!--<TextBlock Text="Password" FontSize="20" Margin="0 0 0 10" />-->
+                            <TextBlock Text="Address" FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock Text="Phone" FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock Text="Avatar"  Height="100" FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock Text="Gender" FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock Text="Birthday" FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock Text="Status" FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock Text="Introduction" Height="100" FontSize="20" Margin="0 0 0 10" />
+                        </StackPanel>
+                        <StackPanel Grid.Row="0" Grid.Column="1">
+                            <TextBlock x:ConnectionId='4' x:Name="FirstName"                           FontSize="20" Margin="0 0 0 10"/>
+                            <TextBlock x:ConnectionId='5' x:Name="LastName"                          FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock x:ConnectionId='6' x:Name="Email"                       FontSize="20" Margin="0 0 0 10" />
+                            <!--<TextBlock x:Name="Password" Text="{x:Bind password}" FontSize="20" Margin="0 0 0 10" />-->
+                            <TextBlock x:ConnectionId='7' x:Name="Address"                         FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock x:ConnectionId='8' x:Name="Phone"                       FontSize="20" Margin="0 0 0 10" />
+                            <!--<Image HorizontalAlignment="Left" Source="{x:Bind avatar}" Height="100" Width="100" Margin="0 0 0 10"/>-->
+                            <TextBlock x:ConnectionId='9' x:Name="Avatar"                        FontSize="20" Height="100" Margin="0 0 0 10" />
+                            <TextBlock x:ConnectionId='10' x:Name="Gender"                        FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock x:ConnectionId='11' x:Name="Birthday"                          FontSize="20" Margin="0 0 0 10" />
+                            <TextBlock x:ConnectionId='12' x:Name="Status"                        FontSize="20" Margin="0 0 0 10" />
+                            <ScrollViewer Height="100" Width="900" VerticalScrollBarVisibility="Auto" Margin="0 0 0 10">
+                                <TextBlock x:ConnectionId='13' x:Name="Introduction" TextWrapping="Wrap"                              FontSize="20" />
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <GridView x:ConnectionId='14' x:Name="MyInfo" ItemTemplate="{StaticResource InfoUser}"/>
+
+    
+</Page>
+

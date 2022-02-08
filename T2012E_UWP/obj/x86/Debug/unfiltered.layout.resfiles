@@ -7,6 +7,9 @@ Assets\Square44x44Logo.targetsize-24_altform-unplated.png
 Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
+Demo\CreateSong.xbf
+Demo\Info.xbf
+Demo\ListSongPage.xbf
 Demo\Login.xbf
 Demo\NavigationViewDemo.xbf
 Demo\NavigationViewDemo2.xbf

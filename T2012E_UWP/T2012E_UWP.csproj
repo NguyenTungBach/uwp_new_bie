@@ -120,6 +120,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Config\ApiConfig.cs" />
+    <Compile Include="Demo\CreateSong.xaml.cs">
+      <DependentUpon>CreateSong.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\Info.xaml.cs">
+      <DependentUpon>Info.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ListSongPage.xaml.cs">
+      <DependentUpon>ListSongPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Demo\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
@@ -145,12 +154,14 @@
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Entity\Account.cs" />
-    <Compile Include="Entity\Login.cs" />
+    <Compile Include="Entity\Credential.cs" />
+    <Compile Include="Entity\Song.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\AccountService.cs" />
+    <Compile Include="Service\SongService.cs" />
     <Compile Include="Util\HashUtil.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -173,6 +184,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Demo\CreateSong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\Info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Demo\ListSongPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Demo\Login.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -211,6 +234,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CloudinaryDotNet">
+      <Version>1.17.0</Version>
+    </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.12</Version>
     </PackageReference>

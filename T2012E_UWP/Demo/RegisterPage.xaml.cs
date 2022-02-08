@@ -217,5 +217,10 @@ namespace T2012E_UWP.Demo
             contentDialog.CloseButtonText = "Oke";
             await contentDialog.ShowAsync();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Demo.Login));
+        }
     }
 }

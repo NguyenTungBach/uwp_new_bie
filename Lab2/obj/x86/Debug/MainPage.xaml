@@ -11,24 +11,24 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
-            
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <MenuBar>
                 <MenuBarItem Title="File">
-                    <MenuFlyoutItem x:ConnectionId='7' Text="New" Tag="new"                             />
-                    <MenuFlyoutItem x:ConnectionId='8' Text="Open..." Tag="open"                             >
+                    <MenuFlyoutItem x:ConnectionId='8' Text="New" Tag="new"                             />
+                    <MenuFlyoutItem x:ConnectionId='9' Text="Open..." Tag="open"                             >
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Modifiers="Control" Key="O"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
-                    <MenuFlyoutItem x:ConnectionId='9' Text="Save" Tag="save"                             >
+                    <MenuFlyoutItem x:ConnectionId='10' Text="Save" Tag="save"                             >
                         <MenuFlyoutItem.KeyboardAccelerators>
                             <KeyboardAccelerator Modifiers="Control" Key="S"/>
                         </MenuFlyoutItem.KeyboardAccelerators>
                     </MenuFlyoutItem>
 
-                    <MenuFlyoutItem x:ConnectionId='10' Text="Exit" Tag="exit"                             />
+                    <MenuFlyoutItem x:ConnectionId='11' Text="Save As" Tag="save_as"                             />
+                    <MenuFlyoutItem x:ConnectionId='12' Text="Exit" Tag="exit"                             />
                 </MenuBarItem>
 
                 <MenuBarItem Title="Edit">
@@ -45,14 +45,16 @@
         </StackPanel>
         <StackPanel  Grid.Row="1">
             <ScrollViewer Height="200" VerticalScrollBarVisibility="Auto" Grid.Row="0">
-                <TextBox x:ConnectionId='6' Header="Nhập text" x:Name="editor" TextWrapping="Wrap" Text=""/>
+                <TextBox x:ConnectionId='7' Header="Nhập text" x:Name="editor" TextWrapping="Wrap" Text=""/>
             </ScrollViewer>
             <TextBlock x:ConnectionId='2' Text="Vui lòng nhập gì đó" x:Name="checkEditor" Visibility="Collapsed" Foreground="Red"/>
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 10 0 0">
-                <Button x:ConnectionId='3' Content="Đọc file"  Margin="0 0 10 0"                      />
-                <Button x:ConnectionId='4' Content="Lưu file" Margin="0 0 10 0"                         />
-                <Button x:ConnectionId='5' Content="Lưu file vào local folder"                                    />
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 10 0 20">
+                <Button x:ConnectionId='4' Content="Đọc file"  Margin="0 0 10 0"                      />
+                <Button x:ConnectionId='5' Content="Chọn lưu file" Margin="0 0 10 0"                         />
+                <Button x:ConnectionId='6' Content="Lưu file vào local folder"                                    />
             </StackPanel>
+            <TextBlock x:ConnectionId='3' x:Name="thisPathFile" HorizontalAlignment="Center" Text="Vị trí file"/>
+            <StackPanel/>
         </StackPanel>
     </Grid>
 </Page>

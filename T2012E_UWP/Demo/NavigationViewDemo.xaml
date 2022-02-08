@@ -12,9 +12,11 @@
         <NavigationView x:Name="NavView" Loaded="NavigationView_Loaded" IsBackButtonVisible="Collapsed" ItemInvoked="NavigationView_ItemInvoked">
             <NavigationView.MenuItems>
                 <NavigationViewItem Content="Lastest Song" Icon="Audio" Tag="listSong"/>
+                <NavigationViewItem Content="Create Song" Icon="Add" Tag="createSong"/>
                 <NavigationViewItemSeparator/>
-                <NavigationViewItem Content="Register" Icon="AddFriend" Tag="register"/>
-                <NavigationViewItem Content="Login" Icon="Permissions" Tag="login"/>
+                <NavigationViewItem Content="Infomation" Icon="ContactPresence" Tag="info"/>
+                <!--<NavigationViewItem Content="Register" Icon="AddFriend" Tag="register"/>
+                <NavigationViewItem Content="Login" Icon="Permissions" Tag="login"/>-->
             </NavigationView.MenuItems>
             <NavigationView.AutoSuggestBox>
                 <!-- See AutoSuggestBox documentation for

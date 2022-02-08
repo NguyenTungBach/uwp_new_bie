@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using T2012E_UWP.Entity;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,11 +26,14 @@ namespace T2012E_UWP.Demo
     {
         public static Frame NavigationFrame;
 
+        
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
-            ("listSong", typeof(Demo.Page1)),
-            ("register", typeof(Demo.RegisterPage)),
-            ("login", typeof(Demo.Login)),
+            ("listSong", typeof(ListSongPage)),
+            //("register", typeof(Demo.RegisterPage)),
+            ("info", typeof(Info)),
+            ("createSong", typeof(CreateSong)),
+            //("login", typeof(Demo.Login)),
            
         };
         public NavigationViewDemo()
@@ -38,16 +43,18 @@ namespace T2012E_UWP.Demo
             NavigationFrame = MainContent;
         }
 
+        // Load trang ban đầu
         private void NavigationViewDemo_Loaded(object sender, RoutedEventArgs e)
         {
-            MainContent.Navigate(typeof(Demo.Page1));
+            MainContent.Navigate(typeof(Page1));
         }
 
+        // Onclick của Nav
         private void NavigationView_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             if (args.IsSettingsInvoked)
             {
-                MainContent.Navigate(typeof(Demo.SettingPage));
+                MainContent.Navigate(typeof(SettingPage));
             }
             else
             {
@@ -70,16 +77,23 @@ namespace T2012E_UWP.Demo
             //}
         }
 
+        // Load động (Ban đầu trong nav chưa có nhưng sau khi chạy hàm này sẽ tự động thêm vào)
         private void NavigationView_Loaded(object sender, RoutedEventArgs e)
         {
-            NavView.MenuItems.Add(new NavigationViewItemSeparator());
-            NavView.MenuItems.Add(new NavigationViewItem
+            Account account = App.accountUser;
+            Debug.WriteLine(account.lastName);
+            if (account.lastName == "Bách")
             {
-                Content = "My content",
-                Icon = new SymbolIcon((Symbol)0xF1AD),
-                Tag = "content"
-            });
-            _pages.Add(("content", typeof(Demo.Page1)));
+                NavView.MenuItems.Add(new NavigationViewItemSeparator());
+                NavView.MenuItems.Add(new NavigationViewItem
+                {
+                    Content = "My content",
+                    Icon = new SymbolIcon((Symbol)0xF1AD),
+                    Tag = "content"
+                });
+                _pages.Add(("content", typeof(Page1)));
+            }
+            
         }
     }
 }

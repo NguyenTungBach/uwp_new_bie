@@ -31,6 +31,7 @@
       <RootProperty Name="Text" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />

@@ -30,8 +30,6 @@ namespace T2012E_UWP
             this.InitializeComponent();
         }
 
-
-
         private async void Link_Tapped(object sender, TappedRoutedEventArgs e)
         {
             var navigationViewItem = sender as NavigationViewItem;

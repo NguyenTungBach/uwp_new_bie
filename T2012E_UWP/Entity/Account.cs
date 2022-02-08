@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace T2012E_UWP.Entity
 {
-    class Account
+    public class Account
     {
         public string firstName { get; set; }
         public string lastName { get; set; }

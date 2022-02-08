@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using T2012E_UWP.Demo;
+using T2012E_UWP.Entity;
+using T2012E_UWP.Service;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -22,6 +25,9 @@ namespace T2012E_UWP
     /// </summary>
     sealed partial class App : Application
     {
+        public static string tokenUser;
+        public static Account accountUser;
+        public static AccountService accountService;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +36,7 @@ namespace T2012E_UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            accountService = new AccountService();
         }
 
         /// <summary>
@@ -37,7 +44,7 @@ namespace T2012E_UWP
         /// will be used such as when the application is launched to open a specific file.
         /// </summary>
         /// <param name="e">Details about the launch request and process.</param>
-        protected override void OnLaunched(LaunchActivatedEventArgs e)
+        protected async override void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
 
@@ -66,7 +73,16 @@ namespace T2012E_UWP
                     // When the navigation stack isn't restored navigate to the first page,
                     // configuring the new page by passing required information as a navigation
                     // parameter
-                    rootFrame.Navigate(typeof(Demo.NavigationViewDemo), e.Arguments);
+                    Account account = await accountService.GetLoggedAccount();
+                    if(account == null)
+                    {
+                        rootFrame.Navigate(typeof(Demo.Login), e.Arguments);
+                    }
+                    else
+                    {
+                        accountUser = account;
+                        rootFrame.Navigate(typeof(Demo.NavigationViewDemo), e.Arguments);
+                    }
                 }
                 // Ensure the current window is active
                 Window.Current.Activate();
