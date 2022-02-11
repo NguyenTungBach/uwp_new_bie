@@ -1,0 +1,1 @@
+F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\UWP_SQLite.csproj;x86
