@@ -28,15 +28,19 @@ namespace UWP_SQLite.Pages
         public CreatedTransaction()
         {
             this.InitializeComponent();
-           
+            this.Loaded += CreatedTransaction_Loaded;
         }
 
-        
+        private void CreatedTransaction_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<CategoryTransaction> listCategory = Server.DataInitialization.ListCategoryTransaction();
+            listViewCategory.ItemsSource = listCategory;
+        }
 
         private void CalendarDatePicker_DateChanged(CalendarDatePicker sender, CalendarDatePickerDateChangedEventArgs args)
         {
             CalendarDatePicker cdp = sender as CalendarDatePicker;
-            checkedCalendarDatePicker = cdp.Date.Value.ToString("dd-MM-yyyy");
+            checkedCalendarDatePicker = cdp.Date.Value.ToString("yyyy-MM-dd");
         }
 
         private async void InsertForTransaction(object sender, RoutedEventArgs e)
@@ -47,7 +51,7 @@ namespace UWP_SQLite.Pages
                 Description = description.Text,
                 Money = double.Parse(money.Text),
                 CreatedDate = DateTime.Parse(checkedCalendarDatePicker),
-                Category = int.Parse(category.Text),
+                Category = int.Parse(category.Tag.ToString()),
             };
 
             ContentDialog contentDialog = new ContentDialog();
@@ -73,6 +77,14 @@ namespace UWP_SQLite.Pages
         private void ListTransactionButton(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Pages.DataTransaction));
+        }
+
+        private void listViewCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CategoryTransaction categorySelection = listViewCategory.SelectedItem as CategoryTransaction;
+            category.Content = categorySelection.Name;
+            category.Tag = categorySelection.Id;
+            category.Flyout.Hide();
         }
     }
 }

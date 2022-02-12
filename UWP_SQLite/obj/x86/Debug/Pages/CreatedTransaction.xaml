@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UWP_SQLite.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:entity1="using:UWP_SQLite.Entity"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -29,7 +29,23 @@
                 <TextBox x:ConnectionId='4' x:Name="description" Header="Description" Margin="0 0 0 10" Width="700" FontSize="20"/>
                 <TextBox x:ConnectionId='5' x:Name="money" Header="Money" Margin="0 0 0 10" Width="700" FontSize="20"                                      />
                 <CalendarDatePicker x:ConnectionId='6' Header="Ngày sinh" Margin="0 0 0 10" VerticalAlignment="Top" FontSize="24" Width="211" DateFormat="{}{day.integer}-{month.integer}-{year.full}"                                             />
-                <TextBox x:ConnectionId='7' x:Name="category" Header="Category" Margin="0 0 0 10" Width="700" FontSize="20"                                      />
+                <TextBlock Text="Category" FontSize="20" Margin="0 0 0 5"/>
+
+                <DropDownButton x:ConnectionId='7' x:Name="category" Margin="0 0 0 10" Width="211" FontSize="20">
+                    <!--<DropDownButton.Content>My Button</DropDownButton.Content>-->
+                    <DropDownButton.Flyout>
+                        <Flyout Placement="Bottom">
+                            <ListView x:ConnectionId='11' x:Name="listViewCategory"                                                     >
+                                <ListView.ItemTemplate>
+                                    <DataTemplate                                          >
+                                        <TextBlock x:ConnectionId='13'                                       />
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Flyout>
+                    </DropDownButton.Flyout>
+                </DropDownButton>
+
                 <!--<TextBlock x:Name="checkPassword" Margin="0 0 0 50" Visibility="Collapsed" Height="30" Text="Hãy nhập mật khẩu" Foreground="Red" FontSize="16"/>-->
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                     <Button x:ConnectionId='9' Content="Tạo" Margin="0 0 10 0"                             />
