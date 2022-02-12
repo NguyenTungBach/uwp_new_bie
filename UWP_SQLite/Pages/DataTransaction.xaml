@@ -4,35 +4,38 @@
     xmlns:local="using:UWP_SQLite.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls" 
+    xmlns:entity1="using:UWP_SQLite.Entity"
     x:Class="UWP_SQLite.Pages.DataTransaction"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Grid>
-        <Custom:DataGrid  x:Name="ListDataGridTransaction" HorizontalAlignment="Left" Height="313" Margin="46,192,0,0" VerticalAlignment="Top" Width="488" SelectionChanged="ListDataGridTransaction_SelectionChanged" SelectionMode="Single"/>
+        <Custom:DataGrid  x:Name="ListDataGridTransaction" HorizontalAlignment="Left" Height="313" Margin="46,192,0,0" VerticalAlignment="Top" Width="868" SelectionChanged="ListDataGridTransaction_SelectionChanged" SelectionMode="Single"/>
         <Button Content="CreateTransaction" Margin="56,665,0,0" VerticalAlignment="Top" Click="CreateTransactionButton"/>
-        <TextBlock HorizontalAlignment="Left" Margin="614,192,0,0" Text="Name: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
-        <TextBlock x:Name="btnName" HorizontalAlignment="Left" Margin="748,192,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
-        <TextBlock HorizontalAlignment="Left" Margin="572,251,0,0" Text="Description: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="106"/>
-        <TextBlock x:Name="btnDescription" HorizontalAlignment="Left" Margin="748,251,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
-        <TextBlock x:Name="btnDetail" HorizontalAlignment="Left" Margin="748,308,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
-        <TextBlock HorizontalAlignment="Left" Margin="614,308,0,0" Text="Detail: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
-        <TextBlock HorizontalAlignment="Left" Margin="614,360,0,0" Text="Money: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
-        <TextBlock x:Name="btnMoney" HorizontalAlignment="Left" Margin="748,360,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
-        <TextBlock HorizontalAlignment="Left" Margin="614,360,0,0" Text="Money: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
-        <TextBlock HorizontalAlignment="Left" Margin="572,412,0,0" Text="CreatedDate: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="106"/>
-        <TextBlock x:Name="btnCreatedDate" HorizontalAlignment="Left" Margin="748,412,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
-        <TextBlock x:Name="btnCategory" HorizontalAlignment="Left" Margin="748,481,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
-        <TextBlock HorizontalAlignment="Left" Margin="614,481,0,0" Text="Category: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
-        <TextBox x:Name="searchCategory" HorizontalAlignment="Left" Margin="53,58,0,0" Header="Search Category" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+
+        <DropDownButton x:Name="searchCategory" HorizontalAlignment="Left" Margin="53,58,0,0" VerticalAlignment="Top" Width="134">
+            <!--<DropDownButton.Content>My Button</DropDownButton.Content>-->
+            <DropDownButton.Flyout>
+                <Flyout Placement="Bottom">
+                    <ListView x:Name="listViewCategory" SelectionChanged="listViewCategory_SelectionChanged">
+                        <ListView.ItemTemplate>
+                            <DataTemplate x:DataType="entity1:CategoryTransaction" >
+                                <TextBlock Text="{x:Bind Name}" Tag="{x:Bind Id}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Flyout>
+            </DropDownButton.Flyout>
+        </DropDownButton>
+
         <Button Content="Tìm theo category" Margin="53,142,0,0" VerticalAlignment="Top" Width="134" Click="FindByCategory"/>
         <Button Content="Reset" Margin="240,665,0,0" VerticalAlignment="Top" Click="ResetList"/>
-        <DatePicker x:Name="startDate" DateChanged="startDate_DateChanged" Header="Ngày bắt đầu" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Margin="267,15,0,0" VerticalAlignment="Top"/>
-        <DatePicker x:Name="endDate"  DateChanged="endDate_DateChanged" Header="Ngày kết thúc" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Margin="267,71,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="startDate" Header="Ngày bắt đầu" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Margin="267,15,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="endDate" Header="Ngày kết thúc" DayFormat="{}{day.integer}" MonthFormat="{}{month.integer}" YearFormat="{}{year.abbreviated}" Margin="267,71,0,0" VerticalAlignment="Top"/>
         <Button Content="Tìm theo ngày bắt đầu và kết thúc" Margin="267,142,0,0" VerticalAlignment="Top" Width="267" Click="FindByStartDateAndEndDate"/>
         <TextBlock HorizontalAlignment="Left" Margin="56,525,0,0" Text="Tổng tiền: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
         <TextBlock x:Name="btnTotalMoney" HorizontalAlignment="Left" Margin="172,525,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
+        <Button Content="Xem chi tiết" Margin="374,665,0,0" VerticalAlignment="Top" Click="DetailTransaction_Click"/>
 
     </Grid>
 </Page>

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "OfjKKRM5GPNWYDwsTQ42TfWJ28hde9bCDNA//1jsiZKJO2QuX3F5Q1fJbSViXAp15xjnM2h3GXLkyK1MyCo7Vw==",
+  "dgSpecHash": "qUZ4bNIB8eohv/PvnHA0lcvdt4nnubjbiJ8wo/fIPILEfmOtv8eNdNT4UjV3Q1NXyfmkGdUQ9FBy7YT77Ot9AA==",
   "success": true,
   "projectFilePath": "F:\\HocWeb\\Universal app\\BT_universal_app\\T2012E_UWP\\UWP_SQLite\\UWP_SQLite.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\z\\.nuget\\packages\\microsoft.toolkit.uwp.ui.controls.datagrid\\7.1.2\\microsoft.toolkit.uwp.ui.controls.datagrid.7.1.2.nupkg.sha512",
     "C:\\Users\\z\\.nuget\\packages\\microsoft.ui.xaml\\2.7.0\\microsoft.ui.xaml.2.7.0.nupkg.sha512",
     "C:\\Users\\z\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\z\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform\\6.2.12\\runtime.win10-arm-aot.microsoft.netcore.universalwindowsplatform.6.2.12.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.compiler\\2.2.10-rel-29722-00\\runtime.win10-arm.microsoft.net.native.compiler.2.2.10-rel-29722-00.nupkg.sha512",
     "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\runtime.win10-arm.microsoft.net.native.sharedlibrary\\2.2.8-rel-29722-00\\runtime.win10-arm.microsoft.net.native.sharedlibrary.2.2.8-rel-29722-00.nupkg.sha512",

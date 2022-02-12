@@ -26,7 +26,8 @@ namespace UWP_SQLite.Pages
     public sealed partial class DataTransaction : Page
     {
         public List<PersonalTransaction> listTransaction;
-        public PersonalTransaction personal;
+        public List<CategoryTransaction> listCategory;
+        public static PersonalTransaction personal;
         private string checkedStartDate;
         private string checkedEndDate;
         public DataTransaction()
@@ -41,6 +42,10 @@ namespace UWP_SQLite.Pages
             Debug.WriteLine(listTransaction);
             ListDataGridTransaction.ItemsSource = listTransaction;
             btnTotalMoney.Text = Server.DataInitialization.totalMoney.ToString();
+
+            listCategory = Server.DataInitialization.ListCategoryTransaction();
+            listViewCategory.ItemsSource = listCategory;
+
         }
 
         private void CreateTransactionButton(object sender, RoutedEventArgs e)
@@ -50,79 +55,85 @@ namespace UWP_SQLite.Pages
 
         private void ListDataGridTransaction_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
+            //CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             personal = ListDataGridTransaction.SelectedItem as PersonalTransaction;
-            if(personal != null)
-            {
-                btnName.Text = personal.Name.ToString();
-                btnDescription.Text = personal.Description.ToString();
-                btnDetail.Text = personal.Detail.ToString();
-                btnMoney.Text = Convert.ToDouble(personal.Money).ToString("#,###", cul.NumberFormat) + " Đồng";
-                btnCreatedDate.Text = personal.CreatedDate.ToString("dd-MM-yyyy");
-                btnCategory.Text = personal.Category.ToString();
+            //if(personal != null)
+            //{
+            //    btnName.Text = personal.Name.ToString();
+            //    btnDescription.Text = personal.Description.ToString();
+            //    btnDetail.Text = personal.Detail.ToString();
+            //    btnMoney.Text = Convert.ToDouble(personal.Money).ToString("#,###", cul.NumberFormat) + " Đồng";
+            //    btnCreatedDate.Text = personal.CreatedDate.ToString("dd-MM-yyyy");
+            //    btnCategory.Text = personal.Category.ToString();
                 
-            }
-            else
-            {
-                btnName.Text = "Waiting";
-                btnDescription.Text = "Waiting";
-                btnDetail.Text = "Waiting";
-                btnMoney.Text = "Waiting";
-                btnCreatedDate.Text = "Waiting";
-                btnCategory.Text = "Waiting";
-            }
+            //}
+            //else
+            //{
+            //    btnName.Text = "Waiting";
+            //    btnDescription.Text = "Waiting";
+            //    btnDetail.Text = "Waiting";
+            //    btnMoney.Text = "Waiting";
+            //    btnCreatedDate.Text = "Waiting";
+            //    btnCategory.Text = "Waiting";
+            //}
         }
 
-        private void FindByCategory(object sender, RoutedEventArgs e)
+        private async void FindByCategory(object sender, RoutedEventArgs e)
         {
-            personal = null;
-            btnName.Text = "Waiting";
-            btnDescription.Text = "Waiting";
-            btnDetail.Text = "Waiting";
-            btnMoney.Text = "Waiting";
-            btnCreatedDate.Text = "Waiting";
-            btnCategory.Text = "Waiting";
-            List<PersonalTransaction> listTransactionByCategory = Server.DataInitialization.ListTransactionByCategory(Convert.ToInt32(searchCategory.Text));
-            ListDataGridTransaction.ItemsSource = listTransactionByCategory;
-            btnTotalMoney.Text = Server.DataInitialization.totalMoney.ToString();
+            try
+            {
+                personal = null;
+                List<PersonalTransaction> listTransactionByCategory = Server.DataInitialization.ListTransactionByCategory(Convert.ToInt32(searchCategory.Tag));
+                ListDataGridTransaction.ItemsSource = listTransactionByCategory;
+                btnTotalMoney.Text = Server.DataInitialization.totalMoney.ToString();
+            }
+            catch
+            {
+                ContentDialog contentDialog = new ContentDialog();
+                contentDialog.Title = "Lỗi!";
+                contentDialog.Content = "Có lỗi xảy ra!";
+                contentDialog.CloseButtonText = "Oke";
+                await contentDialog.ShowAsync();
+            }
+            
         }
 
         private void ResetList(object sender, RoutedEventArgs e)
         {
-            btnName.Text = "Waiting";
-            btnDescription.Text = "Waiting";
-            btnDetail.Text = "Waiting";
-            btnMoney.Text = "Waiting";
-            btnCreatedDate.Text = "Waiting";
-            btnCategory.Text = "Waiting";
             ListDataGridTransaction.ItemsSource = listTransaction;
             btnTotalMoney.Text = Server.DataInitialization.totalMoney.ToString();
         }
 
         private void FindByStartDateAndEndDate(object sender, RoutedEventArgs e)
         {
-            
             personal = null;
-            btnName.Text = "Waiting";
-            btnDescription.Text = "Waiting";
-            btnDetail.Text = "Waiting";
-            btnMoney.Text = "Waiting";
-            btnCreatedDate.Text = "Waiting";
-            btnCategory.Text = "Waiting";
             checkedStartDate = startDate.Date.ToString("yyyy-dd-MM");
             checkedEndDate = endDate.Date.ToString("yyyy-dd-MM");
             ListDataGridTransaction.ItemsSource = Server.DataInitialization.ListTransactionByStartDateAndEndDate(checkedStartDate,checkedEndDate);
             btnTotalMoney.Text = Server.DataInitialization.totalMoney.ToString();
         }
 
-        private void startDate_DateChanged(object sender, DatePickerValueChangedEventArgs e)
+        private void listViewCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            CategoryTransaction categorySelection = listViewCategory.SelectedItem as CategoryTransaction;
+            searchCategory.Content = categorySelection.Name;
+            searchCategory.Tag = categorySelection.Id;
+            searchCategory.Flyout.Hide();
         }
 
-        private void endDate_DateChanged(object sender, DatePickerValueChangedEventArgs e)
+        private async void DetailTransaction_Click(object sender, RoutedEventArgs e)
         {
-            
+            if(personal == null)
+            {
+                ContentDialog contentDialog = new ContentDialog();
+                contentDialog.Title = "Lỗi!";
+                contentDialog.Content = "Xin hãy chọn trong danh sách!";
+                contentDialog.CloseButtonText = "Oke";
+                await contentDialog.ShowAsync();
+                return;
+            }
+            Frame.Navigate(typeof(Pages.DetailTransaction));
+
         }
     }
 }

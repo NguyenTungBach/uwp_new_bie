@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="UWP_SQLite.Pages.DetailTransaction"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_SQLite.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="270,187,0,0" Text="Name: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
+        <TextBlock x:ConnectionId='2' x:Name="btnName" HorizontalAlignment="Left" Margin="404,187,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
+        <TextBlock HorizontalAlignment="Left" Margin="228,246,0,0" Text="Description: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="106"/>
+        <TextBlock x:ConnectionId='3' x:Name="btnDescription" HorizontalAlignment="Left" Margin="404,246,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
+        <TextBlock x:ConnectionId='4' x:Name="btnDetail" HorizontalAlignment="Left" Margin="404,303,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
+        <TextBlock HorizontalAlignment="Left" Margin="270,303,0,0" Text="Detail: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
+        <TextBlock HorizontalAlignment="Left" Margin="270,355,0,0" Text="Money: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
+        <TextBlock x:ConnectionId='5' x:Name="btnMoney" HorizontalAlignment="Left" Margin="404,355,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
+        <TextBlock HorizontalAlignment="Left" Margin="270,355,0,0" Text="Money: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
+        <TextBlock HorizontalAlignment="Left" Margin="228,407,0,0" Text="CreatedDate: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="106"/>
+        <TextBlock x:ConnectionId='6' x:Name="btnCreatedDate" HorizontalAlignment="Left" Margin="404,407,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
+        <TextBlock x:ConnectionId='7' x:Name="btnCategory" HorizontalAlignment="Left" Margin="404,476,0,0" Text="Waiting" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="497"/>
+        <TextBlock HorizontalAlignment="Left" Margin="270,476,0,0" Text="Category: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" Width="84"/>
+        <Button x:ConnectionId='8' Content="Quay về danh sách" Margin="501,593,0,0" VerticalAlignment="Top" Width="200"                                    />
+
+    </Grid>
+</Page>
+

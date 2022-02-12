@@ -16,7 +16,7 @@ namespace UWP_SQLite.Server
         public static void CreatedTransaction()
         {
             SQLiteConnection cnn = new SQLiteConnection("transactionsqlite.db");
-            string sql = @"CREATE TABLE IF NOT EXISTS
+            string sqlPersonalTransaction = @"CREATE TABLE IF NOT EXISTS
             PersonalTransaction (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             Name VARCHAR( 140 ),
             Detail TEXT,
@@ -25,9 +25,31 @@ namespace UWP_SQLite.Server
             CreatedDate DATE,
             Category INT
             );";
-            using (var statement = cnn.Prepare(sql))
+            using (var statement = cnn.Prepare(sqlPersonalTransaction))
             {
                 statement.Step();
+            }
+
+            string sqlDropCategoryTransaction = @"DROP TABLE IF EXISTS CategoryTransaction;";
+            using (var statement = cnn.Prepare(sqlDropCategoryTransaction))
+            {
+                statement.Step();
+            }
+            string sqlCategoryTransaction = @"CREATE TABLE IF NOT EXISTS
+            CategoryTransaction (Id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            Name VARCHAR( 140 )
+            );
+            ";
+            using (var statement = cnn.Prepare(sqlCategoryTransaction))
+            {
+                statement.Step();
+            }
+            using (var categoryTransaction = cnn.Prepare("INSERT INTO CategoryTransaction(Name) VALUES(?),(?),(?)"))
+            {
+                categoryTransaction.Bind(1, "Tien Tet");
+                categoryTransaction.Bind(2, "Tien Tran Lot");
+                categoryTransaction.Bind(3, "Tien An Va");
+                categoryTransaction.Step();
             }
         }
 
@@ -85,6 +107,34 @@ namespace UWP_SQLite.Server
             catch (Exception ex)
             {
                 Debug.WriteLine("Co loi list"+ ex);
+                return null;
+            }
+        }
+
+        public static List<CategoryTransaction> ListCategoryTransaction()
+        {
+            var listCategory = new List<CategoryTransaction>();
+            try
+            {
+                SQLiteConnection cnn = new SQLiteConnection("transactionsqlite.db");
+                using (var stt = cnn.Prepare("select * from CategoryTransaction"))
+                {
+                    while (stt.Step() == SQLiteResult.ROW)
+                    {
+                        var category = new CategoryTransaction()
+                        {
+                            Id = Convert.ToInt32(stt["Id"]),
+                            Name = (string)stt["Name"],
+                        };
+                        listCategory.Add(category);
+                    }
+                }
+                //Debug.WriteLine(list[0]);
+                return listCategory;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Co loi list category" + ex);
                 return null;
             }
         }

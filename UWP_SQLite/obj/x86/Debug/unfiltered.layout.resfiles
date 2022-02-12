@@ -12,5 +12,6 @@ App.xbf
 MainPage.xbf
 Pages\CreatedTransaction.xbf
 Pages\DataTransaction.xbf
+Pages\DetailTransaction.xbf
 UWP_SQLite.xr.xml
 Properties\Default.rd.xml
