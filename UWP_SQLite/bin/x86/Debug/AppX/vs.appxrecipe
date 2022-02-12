@@ -30,13 +30,13 @@
     <AppXManifest Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-02-12T17:39:51.733</Modified>
+      <Modified>2022-02-12T17:50:17.160</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\UWP_SQLite.exe">
       <PackagePath>entrypoint\UWP_SQLite.exe</PackagePath>
-      <Modified>2022-02-12T17:39:51.004</Modified>
+      <Modified>2022-02-12T17:50:16.445</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\z\.nuget\packages\microsoft.toolkit.uwp.ui.controls.datagrid\7.1.2\lib\uap10.0.17763\Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll">
       <PackagePath>Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.dll</PackagePath>
@@ -114,23 +114,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-02-12T17:30:50.368</Modified>
+      <Modified>2022-02-12T17:50:16.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-02-12T17:30:50.368</Modified>
+      <Modified>2022-02-12T17:50:16.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\Pages\CreatedTransaction.xbf">
       <PackagePath>Pages\CreatedTransaction.xbf</PackagePath>
-      <Modified>2022-02-12T17:30:50.368</Modified>
+      <Modified>2022-02-12T17:50:16.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\Pages\DataTransaction.xbf">
       <PackagePath>Pages\DataTransaction.xbf</PackagePath>
-      <Modified>2022-02-12T17:30:50.368</Modified>
+      <Modified>2022-02-12T17:50:16.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\Pages\DetailTransaction.xbf">
       <PackagePath>Pages\DetailTransaction.xbf</PackagePath>
-      <Modified>2022-02-12T17:30:50.368</Modified>
+      <Modified>2022-02-12T17:50:16.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.19041.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -146,7 +146,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_SQLite\bin\x86\Debug\Core\UWP_SQLite.exe">
       <PackagePath>UWP_SQLite.exe</PackagePath>
-      <Modified>2022-02-12T17:39:51.730</Modified>
+      <Modified>2022-02-12T17:50:17.157</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\z\.nuget\packages\microsoft.ui.xaml\2.7.0\buildTransitive\..\lib\uap10.0\Microsoft.UI.Xaml.winmd">
       <PackagePath>Microsoft.UI.Xaml.winmd</PackagePath>

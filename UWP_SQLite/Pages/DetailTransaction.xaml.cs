@@ -35,6 +35,7 @@ namespace UWP_SQLite.Pages
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             personalDetail = DataTransaction.personal;
             //ApplicationData.Current.LocalSettings.Values["CurrentText"] = JsonConvert.SerializeObject(personalDetail);
             if (personalDetail == null)
@@ -51,8 +52,8 @@ namespace UWP_SQLite.Pages
                 ApplicationData.Current.LocalSettings.Values["btnNameText"] = personalDetail.Name.ToString();
                 ApplicationData.Current.LocalSettings.Values["btnDescriptionText"] = personalDetail.Description.ToString();
                 ApplicationData.Current.LocalSettings.Values["btnDetailText"] = personalDetail.Detail.ToString();
-                ApplicationData.Current.LocalSettings.Values["btnMoneyText"] = personalDetail.Money.ToString();
-                ApplicationData.Current.LocalSettings.Values["btnCreatedText"] = personalDetail.CreatedDate.ToString();
+                ApplicationData.Current.LocalSettings.Values["btnMoneyText"] = Convert.ToDouble(personalDetail.Money).ToString("#,###", cul.NumberFormat) + " Đồng"; ;
+                ApplicationData.Current.LocalSettings.Values["btnCreatedText"] = personalDetail.CreatedDate.ToString("dd-MM-yyyy");
                 ApplicationData.Current.LocalSettings.Values["btnCategoryText"] = personalDetail.Category.ToString();
             }
             base.OnNavigatedFrom(e);
@@ -84,7 +85,7 @@ namespace UWP_SQLite.Pages
                     btnName.Text = getDetailAffterNavigatedbtnName;
                     btnDescription.Text = getDetailAffterNavigatedbtnDescription;
                     btnDetail.Text = getDetailAffterNavigatedbtnDetail;
-                    btnMoney.Text = getDetailAffterNavigatedbtnMoney + " Đồng";
+                    btnMoney.Text = getDetailAffterNavigatedbtnMoney;
                     btnCreatedDate.Text = getDetailAffterNavigatedbtnCreated;
                     btnCategory.Text = getDetailAffterNavigatedbtnCategory;
                 }
