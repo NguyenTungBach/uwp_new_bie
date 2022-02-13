@@ -35,9 +35,9 @@
                       SelectionMode="Single"
                                                                     
          Height="400"
-         MinWidth="550"
+         MinWidth="400"
          BorderThickness="1"
-         BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"/>
+         BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Width="1400"/>
             <MediaPlayerElement x:ConnectionId='8' x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True"/>
         </StackPanel>
     </Grid>

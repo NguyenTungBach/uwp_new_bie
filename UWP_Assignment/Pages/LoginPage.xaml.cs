@@ -70,8 +70,8 @@ namespace UWP_Assignment.Pages
             waitingRespone.Visibility = Visibility.Collapsed;
             if (result != null)
             {
-                contentDialog.Title = "Login success, this is your access_token!";
-                contentDialog.Content = result.access_token;
+                //contentDialog.Title = "Login success, this is your access_token!";
+                //contentDialog.Content = result.access_token;
                 Frame.Navigate(typeof(Pages.NavigationViewPage));
             }
             else

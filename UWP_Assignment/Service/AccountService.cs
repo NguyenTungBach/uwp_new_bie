@@ -51,6 +51,7 @@ namespace UWP_Assignment.Service
                     // good case
                     SaveToken(content);
                     Credential obj = JsonConvert.DeserializeObject<Credential>(content);
+                    await GetAccountInformation(obj.access_token);
                     Debug.WriteLine("tokenkey la: " + content);
                     return obj;
                 }

@@ -26,18 +26,17 @@
             </Grid>
         </DataTemplate>
     </Page.Resources>
-    <ScrollViewer>
-
+    <Grid>
         <StackPanel>
-            <TextBlock Text="List Song"/>
+            <TextBlock Text="Bài hát của bạn"/>
             <ListView x:Name="MyListSong" ItemTemplate="{StaticResource SongTemplate}"
                       SelectionMode="Single"
                       SelectionChanged="MyListSong_SelectionChanged"
          Height="400"
          MinWidth="550"
          BorderThickness="1"
-         BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}"/>
+         BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Width="1400"/>
             <MediaPlayerElement x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True"/>
         </StackPanel>
-    </ScrollViewer>
+    </Grid>
 </Page>

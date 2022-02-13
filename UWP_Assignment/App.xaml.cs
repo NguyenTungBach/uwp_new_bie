@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -9,6 +10,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -59,6 +61,15 @@ namespace UWP_Assignment
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {
                     //TODO: Load state from previously suspended application
+                    //if (ApplicationData.Current.LocalSettings.Values.ContainsKey("NavigationStage"))
+                    //{
+                    //    if (ApplicationData.Current.LocalSettings.Values.ContainsKey("accountUser"))
+                    //    {
+                    //        accountUser = (Account) ApplicationData.Current.LocalSettings.Values["accountUser"];
+                    //        rootFrame.SetNavigationState((string)ApplicationData.Current.LocalSettings.Values["NavigationStage"]);
+                    //    }
+                        
+                    //}
                 }
 
                 // Place the frame in the current Window
@@ -81,6 +92,7 @@ namespace UWP_Assignment
                     {
                         accountUser = account;
                         rootFrame.Navigate(typeof(Pages.NavigationViewPage), e.Arguments);
+                        Debug.WriteLine("Co chay qua app" + account);
                     }
                 }
                 // Ensure the current window is active
@@ -109,6 +121,9 @@ namespace UWP_Assignment
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
+            //Frame frame = Window.Current.Content as Frame;
+            //ApplicationData.Current.LocalSettings.Values["NavigationStage"] = frame.GetNavigationState();
+            //ApplicationData.Current.LocalSettings.Values["accountUser"] = accountUser;
             deferral.Complete();
         }
     }
