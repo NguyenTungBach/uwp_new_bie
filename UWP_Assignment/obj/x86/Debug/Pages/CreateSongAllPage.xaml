@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="UWP_Assignment.Pages.CreateSongAllPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_Assignment.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" >
+            <StackPanel Margin="0 30 0 0">
+                <TextBox x:ConnectionId='2' x:Name="txtName" Header="Name" Margin="0 0 0 10" Width="700" FontSize="20"/>
+                <TextBlock x:ConnectionId='3' x:Name="lblCheckName" Margin="0 0 0 20" Visibility="Collapsed" Height="30" Text="Hãy nhập tên bài hát" Foreground="Red" FontSize="16"/>
+                <TextBlock Text="Description" FontSize="20" Margin="0 0 0 5"/>
+                <TextBox x:ConnectionId='4' x:Name="txtDescription" Margin="0 0 0 10" TextWrapping="Wrap" Width="700" FontSize="20"/>
+                <TextBlock x:ConnectionId='5' x:Name="lblCheckDescription" Margin="0 0 0 20" Visibility="Collapsed" Height="30" Text="Hãy nhập mô tả" Foreground="Red" FontSize="16"/>
+                <TextBox x:ConnectionId='6' x:Name="txtSinger" Header="Singer" Margin="0 0 0 10" Width="700" FontSize="20"/>
+                <TextBlock x:ConnectionId='7' x:Name="lblCheckSinger" Margin="0 0 0 20" Visibility="Collapsed" Height="30" Text="Hãy nhập người hát" Foreground="Red" FontSize="16"/>
+                <TextBox x:ConnectionId='8' x:Name="txtAuthor" Header="Author" Margin="0 0 0 10" Width="700" FontSize="20"/>
+                <TextBlock x:ConnectionId='9' x:Name="lblCheckAuthor" Margin="0 0 0 20" Visibility="Collapsed" Height="30" Text="Hãy nhập tác giả" Foreground="Red" FontSize="16"/>
+                <TextBox x:ConnectionId='10' x:Name="txtThumbnail" Visibility="Collapsed" Header="Thumbnail"  Margin="0 0 0 10" Width="700" FontSize="20"/>
+                <Border Height="200" Width="200" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Margin="0 0 0 5">
+                    <Image x:ConnectionId='18' x:Name="imgThumbnail" />
+                </Border>
+                <Button x:ConnectionId='11' x:Name="btnCreateThumbnail"  Content="Tạo ảnh" Margin="0 0 0 10"                               />
+                <Button x:ConnectionId='12' x:Name="btnDeleteThumbnail"  Content="Xóa ảnh" Margin="0 0 0 10"                                Visibility="Collapsed"/>
+                <TextBlock x:ConnectionId='13' x:Name="lblCheckThumbnail" Margin="0 0 0 20" Visibility="Collapsed" Height="30" Text="Hãy chọn ảnh" Foreground="Red" FontSize="16"/>
+                <TextBox x:ConnectionId='14' x:Name="txtLink" Header="Link" Margin="0 0 0 10" Width="700" FontSize="20"/>
+                <TextBlock x:ConnectionId='15' x:Name="lblCheckLink" Margin="0 0 0 20" Visibility="Collapsed" Height="30" Text="Hãy chọn bài hát" Foreground="Red" FontSize="16"/>
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                    <Button x:ConnectionId='17' Content="Tạo bài hát" Margin="0 0 10 0"                          />
+                </StackPanel>
+                <TextBlock x:ConnectionId='16' x:Name="waitingRespone" Margin="0 10 0 0" Visibility="Collapsed" HorizontalAlignment="Center" Height="30" Text="Xin hãy chờ để tạo bài hát..." Foreground="Red" FontSize="16"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+

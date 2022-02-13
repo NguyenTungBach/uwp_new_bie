@@ -1,0 +1,33 @@
+﻿<Page
+    x:Class="UWP_Assignment.Pages.NavigationViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_Assignment.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:ConnectionId='2' x:Name="NavView" IsBackButtonVisible="Collapsed"                                  >
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="Bài hát chung mới nhất" Icon="Audio" Tag="listSongAll"/>
+                <NavigationViewItem Content="Tạo bài hát chung" Icon="Add" Tag="createSongAll"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Content="Danh sách bài hát của bạn" Icon="Audio" Tag="listSongMine"/>
+                <NavigationViewItem Content="Tạo bài của bạn" Icon="Add" Tag="createSongMine"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Content="Thông tin" Icon="ContactPresence" Tag="info"/>
+            </NavigationView.MenuItems>
+            <NavigationView.AutoSuggestBox>
+                <!-- See AutoSuggestBox documentation for
+                 more info about how to implement search. -->
+                <AutoSuggestBox x:ConnectionId='3' x:Name="NavViewSearchBox" QueryIcon="Find"/>
+            </NavigationView.AutoSuggestBox>
+            <ScrollViewer>
+                <Frame x:ConnectionId='4' x:Name="MainContent" Margin="5" Padding="5" />
+            </ScrollViewer>
+        </NavigationView>
+    </Grid>
+</Page>
+

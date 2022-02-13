@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="UWP_Assignment.Pages.InfoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP_Assignment.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="0">
+            <TextBlock Text="Thông tin" FontSize="20"  />
+        </StackPanel>
+        <StackPanel  Grid.Row="1" Margin="0 50 0 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.Column="0" Margin="60 0 60 0">
+                    <TextBlock Text="Tên đầu" FontSize="20" Margin="0 0 0 10"/>
+                    <TextBlock Text="Tên cuối" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Email" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Địa chỉ" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Số điện thoại" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Ảnh đại diện"  Height="200" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Giới tính" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Ngày sinh" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Trạng thái" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock Text="Giới thiệu" Height="100" FontSize="20" Margin="0 0 0 10" />
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <TextBlock x:ConnectionId='2' x:Name="txtFirstName" Text="Waiting" FontSize="20" Margin="0 0 0 10"/>
+                    <TextBlock x:ConnectionId='3' x:Name="txtLastName" Text="Waiting" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock x:ConnectionId='4' x:Name="txtEmail" Text="Waiting" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock x:ConnectionId='5' x:Name="txtAddress" Text="Waiting" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock x:ConnectionId='6' x:Name="txtPhone" Text="Waiting" FontSize="20" Margin="0 0 0 10" />
+                    <Border Height="200" Width="200" HorizontalAlignment="Left" BorderBrush="Black" BorderThickness="1" Margin="0 0 0 10">
+                        <Image x:ConnectionId='11' x:Name="txtAvatar" HorizontalAlignment="Left" />
+                    </Border>
+                    <!--<TextBlock x:Name="Avatar" Text="" FontSize="20" Height="100" Margin="0 0 0 10" />-->
+                    <TextBlock x:ConnectionId='7' x:Name="txtGender" Text="Waiting" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock x:ConnectionId='8' x:Name="txtBirthday" Text="Waiting" FontSize="20" Margin="0 0 0 10" />
+                    <TextBlock x:ConnectionId='9' x:Name="txtStatus" Text="Waiting" FontSize="20" Margin="0 0 0 10" />
+                    <ScrollViewer Height="100" Width="900" VerticalScrollBarVisibility="Auto" Margin="0 0 0 10">
+                        <TextBlock x:ConnectionId='10' x:Name="txtIntroduction" TextWrapping="Wrap" Text="Waiting" FontSize="20" />
+                    </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Page>
+
