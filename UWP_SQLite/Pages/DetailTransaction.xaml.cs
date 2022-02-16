@@ -37,41 +37,42 @@ namespace UWP_SQLite.Pages
         {
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             personalDetail = DataTransaction.personal;
-            //ApplicationData.Current.LocalSettings.Values["CurrentText"] = JsonConvert.SerializeObject(personalDetail);
-            if (personalDetail == null)
-            {
-                ApplicationData.Current.LocalSettings.Values["btnNameText"] = "Waiting";
-                ApplicationData.Current.LocalSettings.Values["btnDescriptionText"] = "Waiting";
-                ApplicationData.Current.LocalSettings.Values["btnDetailText"] = "Waiting";
-                ApplicationData.Current.LocalSettings.Values["btnMoneyText"] = "Waiting";
-                ApplicationData.Current.LocalSettings.Values["btnCreatedText"] = "Waiting";
-                ApplicationData.Current.LocalSettings.Values["btnCategoryText"] = "Waiting";
-            }
-            else
-            {
-                ApplicationData.Current.LocalSettings.Values["btnNameText"] = personalDetail.Name.ToString();
-                ApplicationData.Current.LocalSettings.Values["btnDescriptionText"] = personalDetail.Description.ToString();
-                ApplicationData.Current.LocalSettings.Values["btnDetailText"] = personalDetail.Detail.ToString();
-                ApplicationData.Current.LocalSettings.Values["btnMoneyText"] = Convert.ToDouble(personalDetail.Money).ToString("#,###", cul.NumberFormat) + " Đồng"; ;
-                ApplicationData.Current.LocalSettings.Values["btnCreatedText"] = personalDetail.CreatedDate.ToString("dd-MM-yyyy");
-                ApplicationData.Current.LocalSettings.Values["btnCategoryText"] = personalDetail.Category.ToString();
-            }
+            ApplicationData.Current.LocalSettings.Values["CurrentJSONText"] = JsonConvert.SerializeObject(personalDetail);
+
+            //if (personalDetail == null)
+            //{
+            //    ApplicationData.Current.LocalSettings.Values["btnNameText"] = "Waiting";
+            //    ApplicationData.Current.LocalSettings.Values["btnDescriptionText"] = "Waiting";
+            //    ApplicationData.Current.LocalSettings.Values["btnDetailText"] = "Waiting";
+            //    ApplicationData.Current.LocalSettings.Values["btnMoneyText"] = "Waiting";
+            //    ApplicationData.Current.LocalSettings.Values["btnCreatedText"] = "Waiting";
+            //    ApplicationData.Current.LocalSettings.Values["btnCategoryText"] = "Waiting";
+            //}
+            //else
+            //{
+            //    ApplicationData.Current.LocalSettings.Values["btnNameText"] = personalDetail.Name.ToString();
+            //    ApplicationData.Current.LocalSettings.Values["btnDescriptionText"] = personalDetail.Description.ToString();
+            //    ApplicationData.Current.LocalSettings.Values["btnDetailText"] = personalDetail.Detail.ToString();
+            //    ApplicationData.Current.LocalSettings.Values["btnMoneyText"] = Convert.ToDouble(personalDetail.Money).ToString("#,###", cul.NumberFormat) + " Đồng"; ;
+            //    ApplicationData.Current.LocalSettings.Values["btnCreatedText"] = personalDetail.CreatedDate.ToString("dd-MM-yyyy");
+            //    ApplicationData.Current.LocalSettings.Values["btnCategoryText"] = personalDetail.Category.ToString();
+            //}
             base.OnNavigatedFrom(e);
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("btnNameText"))
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("CurrentJSONText"))
             {
                 CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-                //personalDetail = JsonConvert.DeserializeObject<PersonalTransaction>((string)ApplicationData.Current.RoamingSettings.Values["CurrentText"]);
-                var getDetailAffterNavigatedbtnName = (string)ApplicationData.Current.LocalSettings.Values["btnNameText"];
-                var getDetailAffterNavigatedbtnDescription = (string)ApplicationData.Current.LocalSettings.Values["btnDescriptionText"];
-                var getDetailAffterNavigatedbtnDetail = (string)ApplicationData.Current.LocalSettings.Values["btnDetailText"];
-                var getDetailAffterNavigatedbtnMoney = (string)ApplicationData.Current.LocalSettings.Values["btnMoneyText"];
-                var getDetailAffterNavigatedbtnCreated = (string)ApplicationData.Current.LocalSettings.Values["btnCreatedText"];
-                var getDetailAffterNavigatedbtnCategory = (string)ApplicationData.Current.LocalSettings.Values["btnCategoryText"];
-                if (getDetailAffterNavigatedbtnName == null)
+                personalDetail = JsonConvert.DeserializeObject<PersonalTransaction>((string)ApplicationData.Current.LocalSettings.Values["CurrentJSONText"]);
+                //var getDetailAffterNavigatedbtnName = (string)ApplicationData.Current.LocalSettings.Values["btnNameText"];
+                //var getDetailAffterNavigatedbtnDescription = (string)ApplicationData.Current.LocalSettings.Values["btnDescriptionText"];
+                //var getDetailAffterNavigatedbtnDetail = (string)ApplicationData.Current.LocalSettings.Values["btnDetailText"];
+                //var getDetailAffterNavigatedbtnMoney = (string)ApplicationData.Current.LocalSettings.Values["btnMoneyText"];
+                //var getDetailAffterNavigatedbtnCreated = (string)ApplicationData.Current.LocalSettings.Values["btnCreatedText"];
+                //var getDetailAffterNavigatedbtnCategory = (string)ApplicationData.Current.LocalSettings.Values["btnCategoryText"];
+                if (personalDetail == null)
                 {
                     btnName.Text = "Waiting";
                     btnDescription.Text = "Waiting";
@@ -82,12 +83,12 @@ namespace UWP_SQLite.Pages
                 }
                 else
                 {
-                    btnName.Text = getDetailAffterNavigatedbtnName;
-                    btnDescription.Text = getDetailAffterNavigatedbtnDescription;
-                    btnDetail.Text = getDetailAffterNavigatedbtnDetail;
-                    btnMoney.Text = getDetailAffterNavigatedbtnMoney;
-                    btnCreatedDate.Text = getDetailAffterNavigatedbtnCreated;
-                    btnCategory.Text = getDetailAffterNavigatedbtnCategory;
+                    btnName.Text = personalDetail.Name.ToString();
+                    btnDescription.Text = personalDetail.Description.ToString();
+                    btnDetail.Text = personalDetail.Detail.ToString();
+                    btnMoney.Text = Convert.ToDouble(personalDetail.Money).ToString("#,###", cul.NumberFormat) + " Đồng";
+                    btnCreatedDate.Text = personalDetail.CreatedDate.ToString("dd-MM-yyyy");
+                    btnCategory.Text = personalDetail.Category.ToString();
                 }
             }
 
@@ -97,7 +98,7 @@ namespace UWP_SQLite.Pages
         private void DetailTransaction_Loaded(object sender, RoutedEventArgs e)
         {
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
-            if(DataTransaction.personal != null)
+            if (DataTransaction.personal != null)
             {
                 personalDetail = DataTransaction.personal;
                 btnName.Text = personalDetail.Name.ToString();
@@ -107,7 +108,7 @@ namespace UWP_SQLite.Pages
                 btnCreatedDate.Text = personalDetail.CreatedDate.ToString("dd-MM-yyyy");
                 btnCategory.Text = personalDetail.Category.ToString();
             }
-            
+
         }
 
         private void ReturnListTransaction_Click(object sender, RoutedEventArgs e)

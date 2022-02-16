@@ -57,6 +57,7 @@ namespace UWP_SQLite.Pages
         {
             //CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");
             personal = ListDataGridTransaction.SelectedItem as PersonalTransaction;
+            Debug.WriteLine(personal.Name);
             //if(personal != null)
             //{
             //    btnName.Text = personal.Name.ToString();

@@ -28,15 +28,19 @@
     </Page.Resources>
     <Grid>
         <StackPanel>
-            <TextBlock Text="List Song"/>
+            <TextBlock Text="Bài hát của bạn"/>
             <ListView x:ConnectionId='7' x:Name="MyListSong" ItemTemplate="{StaticResource SongTemplate}"
                       SelectionMode="Single"
                                                                     
-         Height="400"
+         Height="650"
          MinWidth="550"
          BorderThickness="1"
          BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Width="1400"/>
-            <MediaPlayerElement x:ConnectionId='8' x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True"/>
+            <MediaPlayerElement x:ConnectionId='8' x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True" RequestedTheme="Dark" >
+                <MediaPlayerElement.TransportControls>
+                    <MediaTransportControls IsNextTrackButtonVisible ="True" IsPreviousTrackButtonVisible="True" IsZoomButtonVisible="True"/>
+                </MediaPlayerElement.TransportControls>
+            </MediaPlayerElement>
         </StackPanel>
     </Grid>
 </Page>

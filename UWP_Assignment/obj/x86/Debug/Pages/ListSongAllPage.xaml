@@ -15,7 +15,8 @@
                     <ColumnDefinition Width="Auto" MinWidth="150"/>
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Image x:ConnectionId='4'                             MaxHeight="100" Stretch="Fill"/>
+
+                <Image x:ConnectionId='4'                             MaxHeight="100" Stretch="Fill" NineGrid="30,20,30,20"/>
 
                 <StackPanel Margin="12,0,0,0" Grid.Column="1" >
                     <TextBlock x:ConnectionId='5'                      FontSize="14" FontWeight="SemiBold" Style="{ThemeResource BaseTextBlockStyle}"
@@ -30,15 +31,19 @@
     <Grid>
 
         <StackPanel>
-            <TextBlock Text="List Song"/>
+            <TextBlock Text="Bài hát của mọi người"/>
             <ListView x:ConnectionId='7' x:Name="MyListSong" ItemTemplate="{StaticResource SongTemplate}"
                       SelectionMode="Single"
                                                                     
-         Height="400"
+         Height="650"
          MinWidth="400"
          BorderThickness="1"
          BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Width="1400"/>
-            <MediaPlayerElement x:ConnectionId='8' x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True"/>
+            <MediaPlayerElement x:ConnectionId='8' x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True" RequestedTheme="Dark" >
+                <MediaPlayerElement.TransportControls>
+                    <MediaTransportControls IsNextTrackButtonVisible ="True" IsPreviousTrackButtonVisible="True" IsZoomButtonVisible="True"/>
+                </MediaPlayerElement.TransportControls>
+            </MediaPlayerElement>
         </StackPanel>
     </Grid>
 </Page>

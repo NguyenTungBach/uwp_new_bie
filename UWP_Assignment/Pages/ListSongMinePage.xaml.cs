@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -9,6 +10,7 @@ using UWP_Assignment.Service;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Core;
+using Windows.Media.Playback;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,6 +29,8 @@ namespace UWP_Assignment.Pages
     public sealed partial class ListSongMinePage : Page
     {
         private SongService songService;
+        int indexSong;
+        MediaPlaybackList _mediaPlaybackList;
         public ListSongMinePage()
         {
             this.InitializeComponent();
@@ -47,17 +51,66 @@ namespace UWP_Assignment.Pages
 
         private async void ListSongMinePage_Loaded(object sender, RoutedEventArgs e)
         {
-            List<Song> listSong = await songService.GetListSongMineAsync();
-            ObservableCollection<Song> observableSongs = new ObservableCollection<Song>(listSong);
-            //Debug.WriteLine(listSong.Count);
+            List<Song> listSongCheck = await songService.GetListSongMineAsync();
+
+            _mediaPlaybackList = new MediaPlaybackList();
+
+            // cập nhật vào _mediaPlaybackList và loại bỏ những thằng list Song bị lỗi
+            for (int i = 0; i < listSongCheck.Count; i++)
+            {
+                try
+                {
+                    var mediaPlaybackItem = new MediaPlaybackItem(MediaSource.CreateFromUri(new Uri(listSongCheck[i].link)));
+                    _mediaPlaybackList.Items.Add(mediaPlaybackItem);
+                }
+                catch (Exception ex)
+                {
+                    //listSongCheck.RemoveAt(i); // nếu nhạc đó lỗi thì xóa đi
+                    var mediaPlaybackItemNull = new MediaPlaybackItem(MediaSource.CreateFromUri(new Uri("about:blank")));
+                    _mediaPlaybackList.Items.Add(mediaPlaybackItemNull);
+                }
+            }
+            // cập nhật lại danh sách nhạc vì RemoveAt chỉ xóa vị trí còn vị ở đâu thì nó vẫn như thế
+            //List<Song> listSong = new List<Song>();
+            //foreach (var song in listSongCheck)
+            //{
+            //    listSong.Add(song);
+            //}
+            ObservableCollection<Song> observableSongs = new ObservableCollection<Song>(listSongCheck);
             MyListSong.ItemsSource = observableSongs;
+            //_mediaPlaybackList.MaxPlayedItemsToKeepOpen = 3;
+
+            _mediaPlaybackList.CurrentItemChanged += MediaPlaybackList_CurrentItemChanged;
+
+            var _mediaPlayer = new MediaPlayer();
+            _mediaPlayer.Source = _mediaPlaybackList; // MediaPlayerElement < MediaPlayer < MediaPlaybackList < MediaPlaybackItem
+            MyMediaPlayer.SetMediaPlayer(_mediaPlayer);
+        }
+
+        private async void MediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args)
+        {
+            indexSong = (int)sender.CurrentItemIndex; // Lấy vị trí
+            Debug.WriteLine("Vị trí nhạc khi thay đổi: " + indexSong);
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                MyListSong.SelectedIndex = indexSong; // Mục đích cần có Dispatcher là vì vấn đề luồng, sử dụng chung tài nguyên
+            });
         }
 
         private void MyListSong_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Song currentSong = MyListSong.SelectedItem as Song;
-            MyMediaPlayer.MediaPlayer.Source = MediaSource.CreateFromUri(new Uri(currentSong.link));
-            MyMediaPlayer.MediaPlayer.Play();
+            //Song currentSong = MyListSong.SelectedItem as Song;
+            //MyMediaPlayer.MediaPlayer.Source = MediaSource.CreateFromUri(new Uri(currentSong.link));
+            //MyMediaPlayer.MediaPlayer.Play();
+
+            indexSong = MyListSong.SelectedIndex; // vị trí chọn
+            //Song currentSong = MyListSong.SelectedItem as Song;
+            Debug.WriteLine("Nhạc chọn: " + MyListSong.SelectedIndex);
+            if (indexSong != -1)
+            {
+                _mediaPlaybackList.MoveTo(Convert.ToUInt32(indexSong)); // Chạy đến vị trí list cần tìm trong MediaPlayback
+                MyMediaPlayer.MediaPlayer.Play();
+            }
         }
     }
 }

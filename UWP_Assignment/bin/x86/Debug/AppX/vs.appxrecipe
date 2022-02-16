@@ -30,13 +30,13 @@
     <AppXManifest Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-02-13T14:22:56.910</Modified>
+      <Modified>2022-02-16T03:01:39.895</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\UWP_Assignment.exe">
       <PackagePath>entrypoint\UWP_Assignment.exe</PackagePath>
-      <Modified>2022-02-13T14:22:56.466</Modified>
+      <Modified>2022-02-16T03:01:39.457</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\z\.nuget\packages\cloudinarydotnet\1.17.0\lib\netstandard2.0\CloudinaryDotNet.dll">
       <PackagePath>CloudinaryDotNet.dll</PackagePath>
@@ -130,51 +130,51 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\UWP_Assignment.xr.xml">
       <PackagePath>UWP_Assignment.xr.xml</PackagePath>
-      <Modified>2022-02-13T14:20:48.244</Modified>
+      <Modified>2022-02-16T03:01:39.338</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.348</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.348</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\CreateSongAllPage.xbf">
       <PackagePath>Pages\CreateSongAllPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.348</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\CreateSongMinePage.xbf">
       <PackagePath>Pages\CreateSongMinePage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.348</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\InfoPage.xbf">
       <PackagePath>Pages\InfoPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.349</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\ListSongAllPage.xbf">
       <PackagePath>Pages\ListSongAllPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.349</Modified>
+      <Modified>2022-02-16T03:01:39.342</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\ListSongMinePage.xbf">
       <PackagePath>Pages\ListSongMinePage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.349</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\LoginPage.xbf">
       <PackagePath>Pages\LoginPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.349</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\NavigationViewPage.xbf">
       <PackagePath>Pages\NavigationViewPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.349</Modified>
+      <Modified>2022-02-16T02:59:05.201</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\RegisterPage.xbf">
       <PackagePath>Pages\RegisterPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.347</Modified>
+      <Modified>2022-02-16T02:59:05.200</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\SettingPage.xbf">
       <PackagePath>Pages\SettingPage.xbf</PackagePath>
-      <Modified>2022-02-13T14:22:56.349</Modified>
+      <Modified>2022-02-16T02:59:05.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -186,7 +186,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Core\UWP_Assignment.exe">
       <PackagePath>UWP_Assignment.exe</PackagePath>
-      <Modified>2022-02-13T14:22:56.908</Modified>
+      <Modified>2022-02-16T03:01:39.893</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

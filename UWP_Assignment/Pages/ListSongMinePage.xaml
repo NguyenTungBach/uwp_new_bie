@@ -32,11 +32,15 @@
             <ListView x:Name="MyListSong" ItemTemplate="{StaticResource SongTemplate}"
                       SelectionMode="Single"
                       SelectionChanged="MyListSong_SelectionChanged"
-         Height="400"
+         Height="650"
          MinWidth="550"
          BorderThickness="1"
          BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" Width="1400"/>
-            <MediaPlayerElement x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True"/>
+            <MediaPlayerElement x:Name="MyMediaPlayer" AutoPlay="False" AreTransportControlsEnabled="True" RequestedTheme="Dark" >
+                <MediaPlayerElement.TransportControls>
+                    <MediaTransportControls IsNextTrackButtonVisible ="True" IsPreviousTrackButtonVisible="True" IsZoomButtonVisible="True"/>
+                </MediaPlayerElement.TransportControls>
+            </MediaPlayerElement>
         </StackPanel>
     </Grid>
 </Page>

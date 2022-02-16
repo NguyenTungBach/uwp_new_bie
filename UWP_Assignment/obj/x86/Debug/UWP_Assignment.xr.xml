@@ -79,6 +79,7 @@
       <RootProperty Name="Source" />
       <RootProperty Name="MaxHeight" />
       <RootProperty Name="Stretch" />
+      <RootProperty Name="NineGrid" />
     </RootType>
     <RootType FullName="UWP_Assignment.Pages.CreateSongAllPage" />
     <RootType FullName="UWP_Assignment.Pages.CreateSongMinePage" />
@@ -111,6 +112,13 @@
     <RootType FullName="Windows.UI.Xaml.Controls.MediaPlayerElement">
       <RootProperty Name="AutoPlay" />
       <RootProperty Name="AreTransportControlsEnabled" />
+      <RootProperty Name="RequestedTheme" />
+      <RootProperty Name="TransportControls" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.MediaTransportControls">
+      <RootProperty Name="IsNextTrackButtonVisible" />
+      <RootProperty Name="IsPreviousTrackButtonVisible" />
+      <RootProperty Name="IsZoomButtonVisible" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="UWP_Assignment.Pages.ListSongAllPage" />
