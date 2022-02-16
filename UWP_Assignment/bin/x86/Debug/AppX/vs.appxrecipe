@@ -30,13 +30,13 @@
     <AppXManifest Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-02-16T03:01:39.895</Modified>
+      <Modified>2022-02-16T08:57:06.967</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\UWP_Assignment.exe">
       <PackagePath>entrypoint\UWP_Assignment.exe</PackagePath>
-      <Modified>2022-02-16T03:01:39.457</Modified>
+      <Modified>2022-02-16T08:57:05.840</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\z\.nuget\packages\cloudinarydotnet\1.17.0\lib\netstandard2.0\CloudinaryDotNet.dll">
       <PackagePath>CloudinaryDotNet.dll</PackagePath>
@@ -130,7 +130,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\UWP_Assignment.xr.xml">
       <PackagePath>UWP_Assignment.xr.xml</PackagePath>
-      <Modified>2022-02-16T03:01:39.338</Modified>
+      <Modified>2022-02-16T08:57:05.660</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -154,7 +154,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\ListSongAllPage.xbf">
       <PackagePath>Pages\ListSongAllPage.xbf</PackagePath>
-      <Modified>2022-02-16T03:01:39.342</Modified>
+      <Modified>2022-02-16T08:57:05.703</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Pages\ListSongMinePage.xbf">
       <PackagePath>Pages\ListSongMinePage.xbf</PackagePath>
@@ -186,7 +186,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\HocWeb\Universal app\BT_universal_app\T2012E_UWP\UWP_Assignment\bin\x86\Debug\Core\UWP_Assignment.exe">
       <PackagePath>UWP_Assignment.exe</PackagePath>
-      <Modified>2022-02-16T03:01:39.893</Modified>
+      <Modified>2022-02-16T08:57:06.962</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

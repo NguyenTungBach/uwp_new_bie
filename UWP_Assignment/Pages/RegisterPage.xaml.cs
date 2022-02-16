@@ -178,6 +178,7 @@ namespace UWP_Assignment.Pages
                 else
                 {
                     lblCheckEmail.Visibility = Visibility.Collapsed;
+                    lblCheckEmail.Text = "Hãy nhập email";
                     countValid++;
                 }
             }

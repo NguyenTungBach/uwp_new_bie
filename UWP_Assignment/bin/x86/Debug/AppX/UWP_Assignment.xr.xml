@@ -79,7 +79,6 @@
       <RootProperty Name="Source" />
       <RootProperty Name="MaxHeight" />
       <RootProperty Name="Stretch" />
-      <RootProperty Name="NineGrid" />
     </RootType>
     <RootType FullName="UWP_Assignment.Pages.CreateSongAllPage" />
     <RootType FullName="UWP_Assignment.Pages.CreateSongMinePage" />

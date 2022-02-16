@@ -78,9 +78,9 @@ namespace UWP_Assignment.Pages
             {
                 contentDialog.Title = "Login false!";
                 contentDialog.Content = "Đăng nhập thất bại!";
+                contentDialog.CloseButtonText = "Oke";
+                await contentDialog.ShowAsync();
             }
-            contentDialog.CloseButtonText = "Oke";
-            await contentDialog.ShowAsync();
         }
     }
 }
