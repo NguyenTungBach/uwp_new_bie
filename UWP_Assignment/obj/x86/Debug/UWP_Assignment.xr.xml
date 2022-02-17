@@ -71,6 +71,8 @@
       <RootProperty Name="Content" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
       <RootProperty Name="FontSize" />
       <RootEvent Name="Click" />
     </RootType>

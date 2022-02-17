@@ -124,7 +124,6 @@ namespace UWP_Assignment.Service
             }
             account = await GetAccountInformation(credential.access_token);
             return account;
-
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -65,10 +66,9 @@ namespace UWP_Assignment
                     //{
                     //    if (ApplicationData.Current.LocalSettings.Values.ContainsKey("accountUser"))
                     //    {
-                    //        accountUser = (Account) ApplicationData.Current.LocalSettings.Values["accountUser"];
+                    //        accountUser = JsonConvert.DeserializeObject<Account>((string)ApplicationData.Current.LocalSettings.Values["CurrentAccountJSON"]);
                     //        rootFrame.SetNavigationState((string)ApplicationData.Current.LocalSettings.Values["NavigationStage"]);
                     //    }
-                        
                     //}
                 }
 
@@ -123,7 +123,7 @@ namespace UWP_Assignment
             //TODO: Save application state and stop any background activity
             //Frame frame = Window.Current.Content as Frame;
             //ApplicationData.Current.LocalSettings.Values["NavigationStage"] = frame.GetNavigationState();
-            //ApplicationData.Current.LocalSettings.Values["accountUser"] = accountUser;
+            //ApplicationData.Current.LocalSettings.Values["CurrentAccountJSON"] = JsonConvert.SerializeObject(accountUser);
             deferral.Complete();
         }
     }
